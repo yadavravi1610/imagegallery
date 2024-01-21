@@ -42,17 +42,17 @@ const LandingPage = () => {
             <div className='w-screen h-screen bg-cover bg-center flex-col justify-center items-center ' style={{ backgroundImage: `url(${fuji})` }}>
                 <div className='w-screen h-auto flex flex-col gap-10 pt-10'>
                     <div className='flex justify-between mx-auto p-2 bg-[#D9D9D94D] items-center rounded-md w-[90%]'>
-                        <h1 className='text-white text-sm font-medium'>Homepage</h1>
+                        <h1 className='text-white text-sm md:text-lg font-medium'>Homepage</h1>
                         <div className='flex items-center gap-3'>
-                            <h1 className='text-white text-sm font-medium'>Login</h1>
-                            <button className='text-white text-sm font-medium rounded-md px-1 py-1 border-2 border-white'>Create Account</button>
+                            <h1 className='text-white text-sm md:text-lg font-medium'>Login</h1>
+                            <button className='text-white text-sm md:text-lg font-medium rounded-md px-1 py-1 border-2 border-white'>Create Account</button>
                         </div>
                     </div>
                     <div className='mx-auto w-[80%]'>
-                        <h1 className='text-white text-xl font-semibold '>Discover over 2,000,000 free Stock Images</h1>
+                        <h1 className='text-white text-xl md:text-5xl lg:text-6xl font-semibold '>Discover over 2,000,000 free Stock Images</h1>
                     </div>
-                    <form className='mx-auto w-[80%] flex flex-col gap-5' onSubmit={(e) => e.preventDefault()}>
-                        <input onChange={(e) => setSearchInput(e.target.value)} value={searchInput} className='bg-[#D9D9D94D] w-5/6 flex justify-between absolute h-10 px-10 py-2 rounded-md text-white' placeholder='Search' />
+                    <form className='mx-auto w-[80%] md:w-[60%] flex flex-col gap-5' onSubmit={(e) => e.preventDefault()}>
+                        <input onChange={(e) => setSearchInput(e.target.value)} value={searchInput} className='bg-[#D9D9D94D] w-5/6 md:w-4/6 flex justify-between absolute h-10 px-10 py-2 rounded-md text-white' placeholder='Search' />
                         <div className='flex justify-between p-2'>
                             <div className='flex items-center gap-2'>
                                 <img className='w-3 h-4 pt-1' src={search} alt='' />
@@ -66,8 +66,8 @@ const LandingPage = () => {
                         </div>
 
                         {/* </div> */}
-                        <div className='bg-[#D9D9D94D] w-[80%] px-2 mx-auto rounded-md py-2'>
-                            <h1 className='text-xs text-white flex'><p className='font-semibold'>Trending:</p> flowers, love, forest, river</h1>
+                        <div className='bg-[#D9D9D94D] w-[80%] md:w-[47%] px-2 mx-auto rounded-md py-2'>
+                            <h1 className='text-xs md:text-sm text-white flex'><p className='font-semibold'>Trending:</p>&nbsp;flowers, love, forest, river</h1>
                         </div>
                     </form>
                     {
@@ -82,18 +82,17 @@ const LandingPage = () => {
             }
                     {
                         searchResults && searchInput.length > 2 &&
-                        <div className='flex flex-wrap w-[100vw] gap-5 h-[20rem] overflow-x-hidden overflow-y-scroll'>
+                        <div className='flex flex-wrap bg-white w-[100vw] gap-5 h-[20rem] overflow-x-hidden overflow-y-scroll'>
                             {
                                 searchResults.map((result, index) => (
-                                    <div key={index} className='w-28 h-40 mx-auto mt-5 flex flex-col gap-2'>
+                                    <div key={index} className='w-28 md:w-52 lg:w-64 h-40 lg:h-52 xl:w-96 xl:h-60 mx-auto mt-5 flex flex-col gap-2'>
                                         <div>
-                                        <img className='bg-cover bg-center w-full h-28' src={result.largeImageURL} alt='' onClick={() => openImageDetail(index)} />
+                                        <img className='bg-cover bg-center w-full h-28 lg:h-32 xl:h-44' src={result.largeImageURL} alt='' onClick={() => openImageDetail(index)} />
                                         </div>
                                         <div className='flex gap-2 flex-wrap'>
-                                            <div className='text-white text-sm bg-[#D9D9D94D] px-1 border-white'>{result.tags.split(',')[0]}</div>
-                                            <div className='text-white text-sm bg-[#D9D9D94D] px-1 border-white'>{result.tags.split(',')[1]}</div>
-                                            <div className='text-white text-sm bg-[#D9D9D94D] px-1 border-white'>{result.tags.split(',')[2]}</div>
-                                            <div className='text-white text-sm bg-[#D9D9D94D] px-1 border-white'>{result.tags.split(',')[3]}</div>
+                                            <div className='rounded-md text-sm bg-[#D9D9D94D] px-1 border-white'>{result.tags.split(',')[0]}</div>
+                                            <div className='rounded-md text-sm bg-[#D9D9D94D] px-1 border-white'>{result.tags.split(',')[1]}</div>
+                                            <div className='rounded-md text-sm bg-[#D9D9D94D] px-1 border-white'>{result.tags.split(',')[2]}</div>    
                                         </div>
                                     </div>
                                 ))
