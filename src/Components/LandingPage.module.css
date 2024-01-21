@@ -13,18 +13,16 @@
     align-items: center;
 }
 
-/* Modal content styles */
 .modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 80%; /* Adjust the width as needed */
-    max-height: 80%; /* Adjust the height as needed */
+    max-width: 80%; 
+    max-height: 80%; 
     overflow: auto;
 }
 
-/* Close button inside the modal content */
 .modal-content button {
     background-color: #333;
     color: #fff;
@@ -35,12 +33,10 @@
     font-size: 16px;
 }
 
-/* Style for the overlay when the modal is open */
 body.modal-open {
     overflow: hidden;
 }
 
-/* Adjust the appearance of the scrollbar inside the modal content */
 .modal-content::-webkit-scrollbar {
     width: 10px;
 }
